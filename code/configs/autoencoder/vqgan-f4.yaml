@@ -1,0 +1,62 @@
+VQGAN:
+  name: train_7_1_1
+  target: ldm.models.vqgan.VQModel
+  learning_rate: 4.5e-6
+  params:
+    ckpt_path: None
+    embed_dim: 3
+    n_embed: 8192
+    ddconfig:
+      double_z: false
+      z_channels: 3
+      resolution: 128
+      in_channels: 3
+      out_ch: 3
+      ch: 128
+      ch_mult: !!python/tuple
+        - 1
+        - 2
+        - 4
+      num_res_blocks: 2
+      attn_resolutions: [ ]
+      dropout: 0.0
+    lossconfig:
+          target: ldm.modules.loss.vqperceptual.VQLPIPSWithDiscriminator
+          params:
+            disc_conditional: False
+            disc_in_channels: 3
+            disc_start: 10000
+            disc_weight: 0.8
+            codebook_weight: 1.0
+
+data:
+  target: script.train_vqgan.VQGANdataModule
+  params:
+    dataconfig:
+      train:
+        target: ldm.data.PetData_brain123.PET_SIN_512_train_brain
+        params:
+          path: "/mnt/D/chenkang/high_res_PET/PET_brain/train_sin_png"
+        batch: 16
+      val:
+        target: ldm.data.PetData_brain123.PET_SIN_512_val_brain
+        params:
+          path: "/mnt/D/chenkang/high_res_PET/PET_brain/val_sin_png"
+        batch: 16
+
+      test:
+        target: ldm.data.PetData_brain123.PET_SIN_512_val_brain
+        params:
+          path: "/mnt/D/chenkang/high_res_PET/PET_brain/val_sin_png"
+        batch: 16
+
+#    val:
+#      target: 1
+#      params:
+#        path: dataset
+#      batch: 1
+#    test:
+#      target: 1
+#      params:
+#        path: dataset
+#      batch: 1
