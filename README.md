@@ -14,6 +14,7 @@ The SPC-Gen generative framework is built on the Latent Diffusion Model (LDM) an
 ## Visual Results
 1. Generated Samples vs. Baseline Methods
 * Comparison between SPC-Gen and EnVAE, WGAN-QC, SGM in projection domain and image domain.
+  ![](https://github.com/yqx7150/SPC-Gen/blob/main/Images%20uploaded%20to%20GitHub/fig2.png)
 2. Multi-Tracer PET Synthetic Data
 * Three-channel dual-tracer data covering brain, abdomen, and chest, including two single tracers and fused results.
 3. PET Lesion Segmentation
