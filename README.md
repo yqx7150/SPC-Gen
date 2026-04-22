@@ -12,4 +12,4 @@ The SPC-Gen generative framework is built on the Latent Diffusion Model (LDM) an
 
 ## Visual Results
 1. Generated Samples vs. Baseline Methods
-*Comparison between SPC-Gen and EnVAE, WGAN-QC, SGM in projection domain and image domain.
+* Comparison between SPC-Gen and EnVAE, WGAN-QC, SGM in projection domain and image domain.
