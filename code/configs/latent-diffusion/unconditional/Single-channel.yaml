@@ -38,8 +38,7 @@ model:
       params:
         embed_dim: 3
         n_embed: 8192
-        ckpt_path: /mnt/D/yxb/stable-diffusion-master/models/first_stage_models/vq-f4/model.ckpt
-        #ckpt_path: /home/b109/Desktop/chenkang/ldm_pet_downstream/models/first_stage_models/vq-f4/model.ckpt
+        ckpt_path: /mnt/D/ywy/ALL_PET/models/first_stage_models/vq-f4/model.ckpt
         ddconfig:
           double_z: false
           z_channels: 3
@@ -64,11 +63,11 @@ data:
     num_workers: 1
     wrap: false
     train:
-      target: ldm.data.PetData_ab123_npy2.PET_ab_Train
+      target: ldm.data.PetData_brain_npy.PET_SIN_512_train_brain
       params:
         size: 512
     validation:
-      target: ldm.data.PetData_ab123_npy2.PET_ab_Val
+      target: ldm.data.PetData_brain_npy.PET_SIN_512_val_brain
       params:
         size: 512
 
