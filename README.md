@@ -10,3 +10,6 @@ Projection-domain generation paradigm directly models PET sinogram and CT projec
 ## Model Architecture
 The SPC-Gen generative framework is built on the Latent Diffusion Model (LDM) and VQ‑GAN to form an end-to-end projection-domain data generation pipeline, which first uses VQ‑GAN to map high-dimensional projection data into a compact discrete latent space, significantly reducing computational costs, and adopts a UNet architecture integrated with residual blocks and cross-attention layers as the core diffusion backbone; during the training process, the forward diffusion stage gradually injects Gaussian noise into real projection data, while the reverse diffusion stage relies on a denoising network to learn noise estimation and removal, enabling the generation of physically consistent projection data that can be directly reconstructed into clinical images via standard medical reconstruction pipelines. Furthermore, the entire model is trained with a low learning rate of 2.0×10⁻⁶ and a long diffusion schedule of 1000 steps to ensure stable convergence, high-fidelity data generation, and excellent reproducibility in large-scale dataset construction.
 
+## Visual Results
+1. Generated Samples vs. Baseline Methods
+Comparison between SPC-Gen and EnVAE, WGAN-QC, SGM in projection domain and image domain.
