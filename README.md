@@ -22,3 +22,20 @@ The SPC-Gen generative framework is built on the Latent Diffusion Model (LDM) an
 5. Low-Dose CT Denoising
 * Suppresses noise and streaks under 50% low-dose conditions while preserving fine anatomical structures.
 
+## Quantitative Evaluation
+In terms of overall distribution alignment, SPC-Gen achieves a Kernel Inception Distance (KID) of 0.021, a lower value indicating stronger consistency with real data distributions; the Fréchet Inception Distance (FID) is 40.960; and the KL divergence for voxel intensity distribution is approximately 10⁻⁵, which fully demonstrates that the synthetic data closely matches the statistical distribution characteristics of real data in both the projection domain and image domain. For downstream task performance, models trained with SPC-Gen data achieve a Dice score of 82.42%, an IoU of 70.53%, and an average Hausdorff distance (aHD) of 6.93 mm for PET lesion segmentation; a Dice score of 79.34%, an IoU of 65.78%, and an aHD of 7.45 mm for CT lesion segmentation; and in low-dose CT denoising, SSIM is approximately 0.95 and PSNR is around 40 dB, showing excellent performance across all metrics. In instance-level validation using precision-recall based metrics, the Coverage Ratio (CR) remains stable at the theoretically optimal value of 0.50, the Nearest Neighbor Distance (NND) is low and stable, the Diversity Ratio (DR) is close to the ideal value of 1.0 without mode collapse, and the Composite Score (CS) is generally above 0.73 and can reach 0.79 to 0.80 in several dual-tracer and fusion settings, comprehensively validating the reliable performance of the synthetic data in structural fidelity, sample diversity, and generation stability.
+
+## Quick Start
+1. Clone Repository
+  * git clone https://github.com/yqx7150/SPC-Gen.git
+2. Configure Environment
+  * conda env create -f environment.yaml
+3. Download Dataset
+  * Science Data Bank: https://doi.org/10.57760/sciencedb.3092948
+  * GitHub Mirror: https://github.com/yqx7150/SPC-Gen
+4. Run Inference & Generation
+  * python main.py --config configs/latent-diffusion/unconditional/Single-channel.yaml
+  * python main.py --config configs/latent-diffusion/unconditional/Multi-channel.yaml
+
+## Application Scenarios
+SPC-Gen can be directly used in a wide range of medical imaging and artificial intelligence research fields, including PET/CT image reconstruction and artifact correction, low-dose CT imaging and denoising, multi-tracer PET analysis and tracer translation, lesion detection, segmentation and classification, data augmentation for small-sample medical imaging tasks, the development of physically constrained artificial intelligence models, as well as quantitative nuclear medicine and radiomics research.
