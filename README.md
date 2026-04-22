@@ -17,12 +17,16 @@ The SPC-Gen generative framework is built on the Latent Diffusion Model (LDM) an
   ![](https://github.com/yqx7150/SPC-Gen/blob/main/Images%20uploaded%20to%20GitHub/fig2.png)
 2. Multi-Tracer PET Synthetic Data
 * Three-channel dual-tracer data covering brain, abdomen, and chest, including two single tracers and fused results.
+* ![](https://github.com/yqx7150/SPC-Gen/blob/main/Images%20uploaded%20to%20GitHub/fig3.png)
 3. PET Lesion Segmentation
 * Trained with SPC-Gen synthetic data, the model achieves accurate lesion localization and delineation.
+* ![](https://github.com/yqx7150/SPC-Gen/blob/main/Images%20uploaded%20to%20GitHub/fig5.png)
 4. CT Lesion Segmentation
 * Effectively identify and segment lung nodules, with high consistency with ground truth.
+* ![](https://github.com/yqx7150/SPC-Gen/blob/main/Images%20uploaded%20to%20GitHub/fig6.png)
 5. Low-Dose CT Denoising
 * Suppresses noise and streaks under 50% low-dose conditions while preserving fine anatomical structures.
+* ![](https://github.com/yqx7150/SPC-Gen/blob/main/Images%20uploaded%20to%20GitHub/fig7.png)
 
 ## Quantitative Evaluation
 In terms of overall distribution alignment, SPC-Gen achieves a Kernel Inception Distance (KID) of 0.021, a lower value indicating stronger consistency with real data distributions; the Fréchet Inception Distance (FID) is 40.960; and the KL divergence for voxel intensity distribution is approximately 10⁻⁵, which fully demonstrates that the synthetic data closely matches the statistical distribution characteristics of real data in both the projection domain and image domain. For downstream task performance, models trained with SPC-Gen data achieve a Dice score of 82.42%, an IoU of 70.53%, and an average Hausdorff distance (aHD) of 6.93 mm for PET lesion segmentation; a Dice score of 79.34%, an IoU of 65.78%, and an aHD of 7.45 mm for CT lesion segmentation; and in low-dose CT denoising, SSIM is approximately 0.95 and PSNR is around 40 dB, showing excellent performance across all metrics. In instance-level validation using precision-recall based metrics, the Coverage Ratio (CR) remains stable at the theoretically optimal value of 0.50, the Nearest Neighbor Distance (NND) is low and stable, the Diversity Ratio (DR) is close to the ideal value of 1.0 without mode collapse, and the Composite Score (CS) is generally above 0.73 and can reach 0.79 to 0.80 in several dual-tracer and fusion settings, comprehensively validating the reliable performance of the synthetic data in structural fidelity, sample diversity, and generation stability.
