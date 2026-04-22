@@ -25,6 +25,7 @@ PET lesion segmentation using SPC-Gen. (a) Original PET images. (b) Predicted le
 4. CT Lesion Segmentation
 * Effectively identify and segment lung nodules, with high consistency with ground truth.
 ![](https://github.com/yqx7150/SPC-Gen/blob/main/Images%20uploaded%20to%20GitHub/fig6.png)
+
 Practical usability of SPC-Gen for CT lesion segmentation. (a) Original CT images. (b) Ground truth lesion masks. (c) Predicted lesion localization produced by a model trained with SPC-Gen data. (d) Predicted segmentation masks. The examples show spatial consistency between predictions and annotations, supporting the use of SPC-Gen for CT segmentation workflows.
 5. Low-Dose CT Denoising
 * Suppresses noise and streaks under 50% low-dose conditions while preserving fine anatomical structures.
