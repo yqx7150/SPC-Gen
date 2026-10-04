@@ -1,5 +1,8 @@
 # SPC-Gen: Synthetic PET and CT Data using Generative Model in Projection Domain
-
+**Paper:** Synthetic PET and CT Data using Generative Model in Projection Domain   
+**Authors**: Bin Huang, Wenya Yuan, Kang Chen, Bingxuan Li, Qiegen Liu   
+    
+Scientific Data(2026), https://www.nature.com/articles/s41597-026-08013-5   
 ## Abstract
 The rapid advancement of artificial intelligence has substantially increased the demand for large-scale datasets; however, available datasets remain insufficient for data-intensive tasks, particularly in nuclear medicine. While large scale datasets exist for computed tomography (CT), few provide in projection domain and image domain across diverse lesion types. This issue is more pronounced for positron emission tomography (PET), where datasets are scarce, particularly for multiple tracers such as ¹⁸F-DOPA, ¹⁸F-FDG, and ⁶⁸Ga-PSMA, anatomical regions, and disease categories. This work presents SPC-Gen, a large scale Synthetic dataset for PET and CT, Generated using a latent diffusion model. The dataset covers diverse disease types, lesion characteristics, tracers, anatomical regions, and modalities, while preserving the intrinsic correspondence between projection and image domains. SPC-Gen comprises over 50,000 paired projection and image slices for both PET and CT, forming a standardized large scale dataset. Experimental results show that the generated samples closely align with real data distributions and can support improved performance on downstream tasks such as disease classification. Compared with conventional VAE models and more recent GANs and NCSNs based baselines, the proposed approach maintains a stable KID of 0.021 and an FID of 40.960, indicating stronger and more consistent distribution alignment. 
   <tr>
